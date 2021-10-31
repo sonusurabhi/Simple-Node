@@ -12,10 +12,9 @@ install:
 # Scripts to be run such as tests
 before_script:
   - echo "no tests"
-
 script:
   - docker --version # print the version for logging
-  - docker build -t simple-node .
+  - docker build -t simple-node --build-arg NAME=${NAME}.
   - docker tag simple-node YOUR_DOCKER_HUB/simple-node:latest
 
 after_success:
