@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+    - 13
+
+services:
+    - docker
+
+install:
+    - echo "nothing to install"
+script:
+    - docker --version
+    - docker build -t simple-node .
+    - docker tag simple-node sonusurabhi/simple-node:latest
